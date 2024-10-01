@@ -1,0 +1,324 @@
+/******************************/
+/* Variables and Design Tokens */
+/******************************/
+$primary-color: #e67e22;
+$tint-light: #fdf2e9;
+$tint-medium: #fae5d3;
+$tint-dark: #eb984e;
+
+$grey-light: #888;
+$grey-medium: #767676;
+$grey-dark: #333;
+
+$font-rubik: 'Rubik', sans-serif;
+
+/* Font sizes */
+$font-size-small: 1rem;
+$font-size-medium: 1.6rem;
+$font-size-large: 2.4rem;
+
+/* Line heights */
+$line-height-default: 1;
+$line-height-medium: 1.2;
+$line-height-paragraph: 1.6;
+
+/* Border Radius */
+$border-radius-default: 9px;
+$border-radius-medium: 11px;
+
+/* Shadows */
+$box-shadow-light: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+/******************************/
+/* Typography and Base Styles */
+/******************************/
+.OmniFood {
+  /* Base Reset */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%; /* Set base font size */
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: $font-rubik;
+    line-height: $line-height-default;
+    font-weight: 400;
+    color: $grey-dark;
+  }
+
+  img {
+    height: auto;
+  }
+
+  /******************************/
+  /* General Reusable Styles */
+  /******************************/
+  .container {
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+    margin-bottom: 9.6rem;
+  }
+
+  .grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+  }
+
+  .grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /******************************/
+  /* Typography */
+  /******************************/
+  .heading-primary,
+  .heading-secondary,
+  .heading-tertiary {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: $grey-dark;
+  }
+
+  .heading-primary {
+    font-size: 5.2rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+  }
+
+  .heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+  }
+
+  .subheading {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $primary-color;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+  }
+
+  /******************************/
+  /* Buttons */
+  /******************************/
+  .btn,
+  .btn:link,
+  .btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.6rem 3.2rem;
+    border-radius: $border-radius-default;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s;
+  }
+
+  .btn--full:link,
+  .btn--full:visited {
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+  .btn--full:hover,
+  .btn--full:active {
+    background-color: darken($primary-color, 10%);
+  }
+
+  .btn--outline:link,
+  .btn--outline:visited {
+    background-color: #fff;
+    color: $grey-dark;
+  }
+
+  .btn--outline:hover,
+  .btn--outline:active {
+    background-color: $tint-light;
+    box-shadow: inset 0 0 0 3px #fff;
+  }
+
+  .btn--form {
+    background-color: $grey-dark;
+    color: $tint-light;
+    align-self: end;
+    padding: 1.2rem;
+  }
+
+  .btn--form:hover {
+    background-color: #fff;
+    color: $grey-dark;
+  }
+
+  /******************************/
+  /* Lists */
+  /******************************/
+  .list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .list-item {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    line-height: 1.2;
+  }
+
+  /******************************/
+  /* Components */
+  /******************************/
+  .hero {
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9.6rem;
+    align-items: center;
+  }
+
+  .heading-featured-in {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2.4rem;
+    color: $grey-light;
+  }
+
+  .logos {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .logos img {
+    height: 3.2rem;
+    filter: brightness(0);
+    opacity: 50%;
+  }
+
+  .meal {
+    box-shadow: $box-shadow-light;
+    border-radius: $border-radius-medium;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+
+  .meal:hover {
+    transform: translateY(-1.2rem);
+    box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+  }
+
+  /******************************/
+  /* Media Queries */
+  /******************************/
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; /* 9px / 16px  */
+    }
+
+    .grid {
+      column-gap: 4.8rem;
+      row-gap: 6.4rem;
+    }
+
+    .heading-secondary {
+      font-size: 3.6rem;
+    }
+
+    .heading-tertiary {
+      font-size: 2.4rem;
+    }
+  }
+
+  @media (max-width: 59em) {
+    html {
+      font-size: 50%; /* 8px / 16px = 0.5 = 50% */
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 0 8rem;
+      gap: 6.4rem;
+    }
+
+    .grid--3-cols,
+    .grid--4-cols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btn,
+    .btn:link,
+    .btn:visited {
+      padding: 2.4rem 1.6rem;
+    }
+  }
+
+  @media (max-width: 44em) {
+    .grid {
+      row-gap: 4.8rem;
+    }
+
+    .grid--2-cols,
+    .grid--3-cols,
+    .grid--4-cols {
+      grid-template-columns: 1fr;
+    }
+
+    .btn,
+    .btn:link,
+    .btn:visited {
+      padding: 2.4rem 1.6rem;
+    }
+  }
+
+  /******************************/
+  /* Safari Flexbox Gap Fix */
+  /******************************/
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 4.8rem;
+  }
+
+  .no-flexbox-gap .list-item:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+
+  .no-flexbox-gap .list-icon:not(:last-child) {
+    margin-right: 1.6rem;
+  }
+}
